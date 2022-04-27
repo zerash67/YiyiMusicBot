@@ -56,7 +56,7 @@ Generate Session via Repl:
     
 <h4>Click the button below to deploy NdiMusicBot on Heroku!</h4>    
 <a href="https://dashboard.heroku.com/new?template=https://github.com/Ndiproject/NdiMusicBot"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
-<a href="https://telegram.dog/XTZ_HerokuBot?start=TmRpcHJvamVjdC9OZGlNdXNpY0JvdCBtYXN0ZXI"><img src="https://img.shields.io/badge/Deploy%20Via%20Telegram-blue?style=for-the-badge&logo=telegram" width="200""/</a>  </p>
+<a href="https://telegram.dog/XTZ_HerokuBot?start=TmRpcHJvamVjdC9OZGlNdXNpY0JvdCBtYXN0ZXI"><img src="https://img.shields.io/badge/Deploy%20Via%20Telegram-white?style=for-the-badge&logo=telegram" width="200""/</a>  </p>
     
 </details>
 
