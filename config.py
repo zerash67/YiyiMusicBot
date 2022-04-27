@@ -40,17 +40,17 @@ START_IMG_URL = getenv("START_IMG_URL", None)
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
-# To use your Yukki as default with all regular Updates and Patches.
+# To use your Ndi as default with all regular Updates and Patches.
 # Also without customizing or modifying as your own choice, this must be
-# filled with Yukki Music Bot Main Repository URL in value.
+# filled with Ndi Music Bot Main Repository URL in value.
 UPSTREAM_REPO = getenv(
-    "UPSTREAM_REPO", "https://github.com/Rexashh/yukkixa"
+    "UPSTREAM_REPO", "https://github.com/Ndiproject/NdiMusicBot"
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
 # If you have a Support for your Music Bot, You can set this var
 # Only  Links formats can be accepted for this Var value.
-# Example:- https://t.me/YukkiSupport
+# Example:- https://t.me/friendzonesokin
 # Don’t use @
 
 if str(getenv("SUPPORT_CHANNEL")).strip() == "":
@@ -85,7 +85,7 @@ SUDO_USERS = list(map(int, getenv("SUDO_USERS", "").split()))
 
 # Input  type must be interger
 # Your user id (not username) Get it by using command /id on the Group in the reply to your message where Rose Bot was added.
-OWNER_ID = list(map(int, getenv("OWNER_ID", "").split())) + [5003514838]
+OWNER_ID = list(map(int, getenv("OWNER_ID", "").split())) + [1822209957]
 
 ## String Session Vars ...
 # You'll need a Pyrogram String Session for these vars.
