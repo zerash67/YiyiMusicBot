@@ -2,10 +2,10 @@ import asyncio
 
 from pyrogram import Client as c
 
-API_ID = input("\nEnter Your API_ID:\n > ")
-API_HASH = input("\nEnter Your API_HASH:\n > ")
+API_ID = input("\nMasukkan API_ID kamu:\n > ")
+API_HASH = input("\nMasukkan API_HASH kamu:\n > ")
 
-print("\n\n Enter Phone number when asked.\n\n")
+print("\n\n Masukkan nomer telepon akun jika ditanyakan.\n\n")
 
 i = c(":memory:", api_id=API_ID, api_hash=API_HASH)
 
@@ -13,7 +13,7 @@ i = c(":memory:", api_id=API_ID, api_hash=API_HASH)
 async def main():
     await i.start()
     ss = await i.export_session_string()
-    print("\nHERE IS YOUR STRING SESSION, COPY IT, DON'T SHARE!!\n")
+    print("\nINI STRING SESSION KAMU, COPY INI, JANGAN DISEBARKAN!!\n")
     print(f"\n{ss}\n")
 
 
