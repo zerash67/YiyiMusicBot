@@ -98,7 +98,7 @@ $ bash start
 
 Distributed under the [GNU General Public License v3.0 License.](https://github.com/Ndiproject/NdiMusicBot/blob/main/LICENSE) See `LICENSE.md` for more information.
 
-## Acknowledgements
+## Acknowledgement
 
 Special thanks to these amazing projects/people which/who help power NdiMusicBot:
 
