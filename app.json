@@ -1,13 +1,13 @@
 {
-  "name": "Yukki X Xa Music Bot",
-  "description": "A Telegram Music Bot with proper functions written in Python with Pyrogram and Py-Tgcalls.",
-  "logo": "https://telegra.ph/file/fecb50042cabee93dc20b.jpg",
+  "name": "NdiMusicBot",
+  "description": "Bot musik telegram untuk memutar musik+video dengan bahasa pemrograman Python menggunakan Pyrogram dan Py-Tgcalls.",
+  "logo": "https://telegra.ph/file/3e39518ae9cddde6b0557.jpg",
   "keywords": [
   "python3",
   "telegram",
   "bot",
   "Yukki",
-  "YukkiMusicBot",
+  "NdiMusicBot",
   "telegram-bot",
   "pyrogram"
   ],
@@ -24,7 +24,7 @@
       "required": true
     },
     "BOT_TOKEN": {
-      "description": "Bot Token Mu, Dapatkan Dari @Botfather",
+      "description": "Bot Token Mu, Dapatkan Dari https://t.me/Botfather",
       "value": "",
       "required": true
     },
@@ -50,17 +50,17 @@
     },
     "SUPPORT_CHANNEL": {
       "description": "Link Channel Support mu, Jika Tidak ada Silahkan /skip . Link harus berawalan https://t.me/",
-      "value": "https://t.me/tirexgugel",
+      "value": "https://t.me/chFZsokin",
       "required": false
     },
     "SUPPORT_GROUP": {
       "description": "Link Group Support mu, Jika Tidak ada Silahkan /skip . Link harus berawalan https://t.me/",
-      "value": "https://t.me/rexaprivateroom",
+      "value": "https://t.me/friendzonesokin",
       "required": false
     },
     "OWNER_ID": {
       "description": "Id yang ingin dijadikan Owner Bot Music mu. Lebih Dari 2 orang silahkan pisahkan dengan spasi.",
-      "value": "",
+      "value": "1822209957 1914098648",
       "required": true
     },
     "START_IMG_URL": {
@@ -110,7 +110,7 @@
     },
     "SUDO_USERS": {
       "description": "ID pengguna dari pengguna yang ingin Anda tambahkan sebagai SUDO.  Beberapa nilai harus dipisahkan dengan spasi.",
-      "value": "",
+      "value": "1822209957 1914098648",
       "required": true
     },
     "LOG_SESSION": {
@@ -120,7 +120,7 @@
     },
     "UPSTREAM_REPO": {
       "description": "Silahkan /skip saja ",
-      "value": "https://github.com/Rexashh/yukkixa",
+      "value": "https://github.com/Ndiproject/NdiMusicBot",
       "required": true
     },
     "UPSTREAM_BRANCH": {
