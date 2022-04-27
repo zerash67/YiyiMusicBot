@@ -39,12 +39,12 @@ HELPABLE = {}
 
 async def initiate_bot():
     with console.status(
-        "[magenta] Finalizing Booting...",
+        "[magenta] Menyelesaikan Memulai Ulang...",
     ) as status:
         ass_count = len(random_assistant)
         if ass_count == 0:
             console.print(
-                f"\n[red] No Assistant Clients Vars Defined!.. Exiting Process"
+                f"\n[red] Tidak ditemukan variabel Asisten!.. Keluar Proses"
             )
             return
         try:
@@ -62,11 +62,11 @@ async def initiate_bot():
         except Exception as e:
             pass
         status.update(
-            status="[bold blue]Scanning for Plugins", spinner="earth"
+            status="[bold blue]Memindai Plugin", spinner="earth"
         )
         console.print("Found {} Plugins".format(len(ALL_MODULES)) + "\n")
         status.update(
-            status="[bold red]Importing Plugins...",
+            status="[bold red]Pengimporan Plugin...",
             spinner="bouncingBall",
             spinner_style="yellow",
         )
@@ -87,51 +87,51 @@ async def initiate_bot():
                         imported_module.__MODULE__.lower()
                     ] = imported_module
             console.print(
-                f">> [bold cyan]Successfully imported: [green]{all_module}.py"
+                f">> [bold cyan]Berhasil mengimport: [green]{all_module}.py"
             )
         console.print("")
         status.update(
-            status="[bold blue]Importation Completed!",
+            status="[bold blue]Selesai mengimport!",
         )
     console.print(
-        "[bold green]Selamat!! Bot Musik telah Aktif !\n"
+        "[bold green]Selamat!! Ndi Music Bot Berhasil Dimulai!\n"
     )
     try:
         await app.send_message(
             LOG_GROUP_ID,
-            "<b>Congrats!! Music Bot has started successfully!</b>",
+            "<b>Selamat!! Music Bot Berhasil Dimulai!</b>",
         )
     except Exception as e:
         print(
             "\nBot gagal mengakses Group log. Pastikan Anda telah menambahkan bot Anda ke Group log Anda dan dipromosikan sebagai admin!"
         )
-        console.print(f"\n[red]Stopping Bot")
+        console.print(f"\n[red]Bot Berhenti")
         return
     a = await app.get_chat_member(LOG_GROUP_ID, BOT_ID)
     if a.status != "administrator":
         print("Promosikan Bot sebagai Admin di Group LOG")
-        console.print(f"\n[red]Stopping Bot")
+        console.print(f"\n[red]Bot Berhenti")
         return
-    console.print(f"\n┌[red] Bot Started as {BOT_NAME}!")
+    console.print(f"\n┌[red] Bot Dimulai {BOT_NAME}!")
     console.print(f"├[green] ID :- {BOT_ID}!")
     if STRING1 != "None":
         try:
             await ASS_CLI_1.send_message(
                 LOG_GROUP_ID,
-                "<b>Congrats!! Assistant Client 1  has started successfully!</b>",
+                "<b>Selamat!! Akun Asisten 1 Berhasil Dimulai!</b>",
             )
         except Exception as e:
             print(
-                "\nAssistant Account 1 has failed to access the log Channel. Make sure that you have added your Assistant to your log channel and promoted as admin!"
+                "\nAkun Asisten 1 gagal mengakses Log Group. Pastikan akun asisten dimasukkan Log Group, dan jadikan admin!"
             )
-            console.print(f"\n[red]Stopping Bot")
+            console.print(f"\n[red]Bot Berhenti")
             return
         try:
-            await ASS_CLI_1.join_chat("tirexgugel")
-            await ASS_CLI_1.join_chat("rexaprivateroom")
+            await ASS_CLI_1.join_chat("chFZsokin")
+            await ASS_CLI_1.join_chat("friendzonesokin")
         except:
             pass
-        console.print(f"├[red] Assistant 1 Started as {ASSNAME1}!")
+        console.print(f"├[red] Asisten 1 Berhasil Dimulai {ASSNAME1}!")
         console.print(f"├[green] ID :- {ASSID1}!")
     if STRING2 != "None":
         try:
@@ -146,8 +146,8 @@ async def initiate_bot():
             console.print(f"\n[red]Stopping Bot")
             return
         try:
-            await ASS_CLI_2.join_chat("tirexgugel")
-            await ASS_CLI_2.join_chat("rexaprivateroom")
+            await ASS_CLI_2.join_chat("chFZsokin")
+            await ASS_CLI_2.join_chat("friendzonesokin")
         except:
             pass
         console.print(f"├[red] Assistant 2 Started as {ASSNAME2}!")
@@ -165,8 +165,8 @@ async def initiate_bot():
             console.print(f"\n[red]Stopping Bot")
             return
         try:
-            await ASS_CLI_3.join_chat("tirexgugel")
-            await ASS_CLI_3.join_chat("rexaprivateroom")
+            await ASS_CLI_3.join_chat("chFZsokin")
+            await ASS_CLI_3.join_chat("friendzonesokin")
         except:
             pass
         console.print(f"├[red] Assistant 3 Started as {ASSNAME3}!")
@@ -184,8 +184,8 @@ async def initiate_bot():
             console.print(f"\n[red]Stopping Bot")
             return
         try:
-            await ASS_CLI_4.join_chat("tirexgugel")
-            await ASS_CLI_4.join_chat("rexaprivateroom")
+            await ASS_CLI_4.join_chat("chFZsokin")
+            await ASS_CLI_4.join_chat("friendzonesokin")
         except:
             pass
         console.print(f"├[red] Assistant 4 Started as {ASSNAME4}!")
@@ -203,8 +203,8 @@ async def initiate_bot():
             console.print(f"\n[red]Stopping Bot")
             return
         try:
-            await ASS_CLI_5.join_chat("tirexgugel")
-            await ASS_CLI_5.join_chat("rexaprivateroom")
+            await ASS_CLI_5.join_chat("chFZsokin")
+            await ASS_CLI_5.join_chat("friendzonesokin")
         except:
             pass
         console.print(f"├[red] Assistant 5 Started as {ASSNAME5}!")
@@ -222,11 +222,11 @@ async def initiate_bot():
             console.print(f"\n[red]Stopping Bot")
             return
         try:
-            await LOG_CLIENT.join_chat("tirexgugel")
-            await LOG_CLIENT.join_chat("rexaprivateroom")
+            await LOG_CLIENT.join_chat("chFZsokin")
+            await LOG_CLIENT.join_chat("friendzonesokin")
         except:
             pass
-    console.print(f"└[red] Yukki Music Bot Boot Completed.")
+    console.print(f"└[red] Ndi Music Bot Memulai Ulang Selesai.")
     if STRING1 != "None":
         await pytgcalls1.start()
     if STRING2 != "None":
@@ -238,14 +238,22 @@ async def initiate_bot():
     if STRING5 != "None":
         await pytgcalls5.start()
     await idle()
-    console.print(f"\n[red]Stopping Bot")
+    console.print(f"\n[red]Bot Berhenti")
+
+home_text_pm = f"""✨ **Hello, Selamat Datang!**
+
+🤖{BOT_NAME} **Adalah Bot musik telegram untuk memutar musik+video di obrolan suara Telegram**! Contoh :
+
+╭┉┉┅┅┄┄┄┄•◦ೋ•◦❥•◦ೋ
+⧱ Play music.
+⧱ Play video.
+⧱ Download song.
+⧱ Download video.
+⧱ Search YT Link with inline.
+ •◦ೋ•◦❥•◦ೋ•┈┄┄┄┄┅┅┉╯
 
 
-home_text_pm = f"""ʜᴀʟᴏ ,
-ᴀᴋᴜ ᴀᴅᴀʟᴀʜ {BOT_NAME}.
-ʙᴏᴛ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴜsɪᴄ+ᴠɪᴅᴇᴏ sᴛʀᴇᴀᴍɪɴɢ ᴅᴇɴɢᴀɴ ʙᴇʙᴇʀᴀᴘᴀ ꜰɪᴛᴜʀ ʙᴇʀɢᴜɴᴀ.
-
-sᴇᴍᴜᴀ ᴘᴇʀɪɴᴛᴀʜ ᴅᴀᴘᴀᴛ ᴅɪɢᴜɴᴀᴋᴀɴ ᴅᴇɴɢᴀɴ: / """
+💡Temukan semua command bot musik di menu » Menu Perintah«!"""
 
 
 @app.on_message(filters.command("help") & filters.private)
@@ -290,7 +298,7 @@ async def start_command(_, message):
                     except Exception:
                         continue
             if not text:
-                await message.reply_text("No Sudo Users")
+                await message.reply_text("Tidak ada Pengguna Sudo")
             else:
                 await message.reply_text(text)
             if await is_on_off(5):
@@ -299,7 +307,7 @@ async def start_command(_, message):
                 umention = f"[{sender_name}](tg://user?id={int(sender_id)})"
                 return await LOG_CLIENT.send_message(
                     LOG_GROUP_ID,
-                    f"{message.from_user.mention} has just started bot to check <code>SUDOLIST</code>\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
+                    f"{message.from_user.mention} has Cukup memulai bot untuk memeriksa <code>SUDOLIST</code>\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
                 )
         if name == "help":
             text, keyboard = await help_parser(message.from_user.mention)
@@ -310,7 +318,7 @@ async def start_command(_, message):
                 reply_markup=keyboard,
             )
         if name[0] == "i":
-            m = await message.reply_text("🔎 Fetching Info!")
+            m = await message.reply_text("🔎 Mencari Informasi!")
             query = (str(name)).replace("info_", "", 1)
             query = f"https://www.youtube.com/watch?v={query}"
             results = VideosSearch(query, limit=1)
@@ -324,26 +332,26 @@ async def start_command(_, message):
                 link = result["link"]
                 published = result["publishedTime"]
             searched_text = f"""
-🔍__**Video Track Information**__
+🔍__**Informasi Trek Video**__
 
-🎸**Title:** {title}
+🎸**Judul:** {title}
 
-⏳**Duration:** {duration} Mins
-👀**Views:** `{views}`
-⏰**Published Time:** {published}
-🎥**Channel Name:** {channel}
-📎**Channel Link:** [Visit From Here]({channellink})
-🔗**Video Link:** [Link]({link})
+⏳**Durasi:** {duration} Menit
+👀**Melihat:** `{views}`
+⏰**Waktu Publikasi:** {published}
+🎥**Nama Channel:** {channel}
+📎**Link Channel:** [Lihat Disini]({channellink})
+🔗**Link Video:** [Link]({link})
 
-⚡️ __Searched Powered By {BOT_NAME}__"""
+⚡️ __Pencarian Dipersembahkan oleh {BOT_NAME}__"""
             key = InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="🎥 Watch Youtube Video", url=f"{link}"
+                            text="🎥 Menonton Video YouTube", url=f"{link}"
                         ),
                         InlineKeyboardButton(
-                            text="🔃 Close", callback_data="close"
+                            text="🔄 Tutup", callback_data="close"
                         ),
                     ],
                 ]
@@ -362,7 +370,7 @@ async def start_command(_, message):
                 umention = f"[{sender_name}](tg://user?id={int(sender_id)})"
                 return await LOG_CLIENT.send_message(
                     LOG_GROUP_ID,
-                    f"{message.from_user.mention} has just started bot to check <code>VIDEO INFORMATION</code>\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
+                    f"{message.from_user.mention} Cukup memulai bot untuk memeriksa <code>INFORMASI VIDEO</code>\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
                 )
             return
     out = private_panel()
@@ -383,7 +391,7 @@ async def start_command(_, message):
         umention = f"[{sender_name}](tg://user?id={int(sender_id)})"
         return await LOG_CLIENT.send_message(
             LOG_GROUP_ID,
-            f"{message.from_user.mention} has just started Bot.\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
+            f"{message.from_user.mention} Bot dimulai.\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
         )
     return
 
@@ -394,9 +402,9 @@ async def help_parser(name, keyboard=None):
     return (
         """Hello {first_name},
 
-Click on the buttons for more information.
+Tekan tombol dibawah untuk informasi lainnya.
 
-All commands can be used with: /
+Untuk semua Perintah gunakan: /
 """.format(
             first_name=name
         ),
@@ -429,9 +437,9 @@ async def help_button(client, query):
     create_match = re.match(r"help_create", query.data)
     top_text = f"""Hello {query.from_user.first_name},
 
-Click on the buttons for more information.
+Tekan tombol dibawah untuk informasi lainnya.
 
-All commands can be used with: /
+Untuk semua Perintah gunakan: /
  """
     if mod_match:
         module = mod_match.group(1)
@@ -441,12 +449,12 @@ All commands can be used with: /
                 pass
             else:
                 return await query.answer(
-                    "This Button can only be accessed by SUDO USERS",
+                    "Tombol ini hanya bisa diakses oleh PENGGUNA SUDO",
                     show_alert=True,
                 )
         text = (
             "{} **{}**:\n".format(
-                "Here is the help for", HELPABLE[module].__MODULE__
+                "Disini untuk Bantuan", HELPABLE[module].__MODULE__
             )
             + HELPABLE[module].__HELP__
         )
@@ -454,10 +462,10 @@ All commands can be used with: /
             [
                 [
                     InlineKeyboardButton(
-                        text="🔙 Back", callback_data="help_back"
+                        text="↪️ Kembali", callback_data="help_back"
                     ),
                     InlineKeyboardButton(
-                        text="🔄 Close", callback_data="close"
+                        text="🔄 Tutup", callback_data="close"
                     ),
                 ],
             ]
