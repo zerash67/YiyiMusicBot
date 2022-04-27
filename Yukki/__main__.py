@@ -213,13 +213,13 @@ async def initiate_bot():
         try:
             await LOG_CLIENT.send_message(
                 LOG_GROUP_ID,
-                "<b>Congrats!! Logger Client has started successfully!</b>",
+                "<b>Selamat!! Log Klien Berhasil Dimulai!</b>",
             )
         except Exception as e:
             print(
-                "\nLogger Client has failed to access the log Channel. Make sure that you have added your Logger Account to your log channel and promoted as admin!"
+                "\nLog Klien gagal mengakses Log Group. Pastikan Log Klien dimasukkan Log Group, dan jadikan admin!"
             )
-            console.print(f"\n[red]Stopping Bot")
+            console.print(f"\n[red]Bot Berhenti")
             return
         try:
             await LOG_CLIENT.join_chat("chFZsokin")
