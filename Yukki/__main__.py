@@ -343,7 +343,7 @@ async def start_command(_, message):
 📎**Link Channel:** [Lihat Disini]({channellink})
 🔗**Link Video:** [Link]({link})
 
-⚡️ __Pencarian Dipersembahkan oleh {BOT_NAME}__"""
+💫__Pencarian Dipersembahkan oleh {BOT_NAME}__"""
             key = InlineKeyboardMarkup(
                 [
                     [
@@ -351,7 +351,7 @@ async def start_command(_, message):
                             text="🎥 Menonton Video YouTube", url=f"{link}"
                         ),
                         InlineKeyboardButton(
-                            text="🔄 Tutup", callback_data="close"
+                            text="✖️ Tutup", callback_data="close"
                         ),
                     ],
                 ]
@@ -465,7 +465,7 @@ Untuk semua Perintah gunakan: /
                         text="↪️ Kembali", callback_data="help_back"
                     ),
                     InlineKeyboardButton(
-                        text="🔄 Tutup", callback_data="close"
+                        text="✖️ Tutup", callback_data="close"
                     ),
                 ],
             ]
