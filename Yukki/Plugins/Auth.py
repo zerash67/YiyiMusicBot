@@ -12,18 +12,14 @@ from Yukki.Utilities.changers import (alpha_to_int, int_to_alpha,
 __MODULE__ = "Auth Users"
 __HELP__ = """
 
-**Note:**
--Auth Pengguna auth dapat melewati, menjeda, menghentikan, melanjutkan Obrolan Suara bahkan tanpa Hak Admin.
-
-
-/auth [Username or Balas ke Pesan] 
-- Tambahkan pengguna ke DAFTAR AUTH grup.
-
-/unauth [Username or Balas ke Pesan] 
-- Hapus pengguna dari DAFTAR AUTH grup.
-
+**Catatan:**
+-Pengguna resmi dapat melewati, menjeda, menghentikan, melanjutkan Obrolan Suara bahkan tanpa Hak Admin.
+/auth [Nama Pengguna atau Balas Pesan] 
+- Tambahkan pengguna ke AUTH LIST Group.
+/unauth [Nama Pengguna atau Balas Pesan] 
+- Hapus pengguna dari AUTH LIST Group.
 /authusers 
-- Periksa DAFTAR AUTH grup.
+- Periksa AUTH LIST di Group.
 """
 
 
@@ -33,7 +29,7 @@ async def auth(_, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
             await message.reply_text(
-                "Membalas pesan pengguna atau memberikan username/user_id."
+                "Balas pesan pengguna atau berikan nama pengguna/id pengguna."
             )
             return
         user = message.text.split(None, 1)[1]
@@ -50,7 +46,7 @@ async def auth(_, message: Message):
             count += 1
         if int(count) == 20:
             return await message.reply_text(
-                "You can only have 20 Users In Your Groups Authorised Users List (AUL)"
+                "Anda hanya dapat memiliki 20 Pengguna Di Daftar Pengguna Resmi Group Anda (AUL)"
             )
         if token not in _check:
             assis = {
@@ -61,11 +57,11 @@ async def auth(_, message: Message):
             }
             await save_authuser(message.chat.id, token, assis)
             await message.reply_text(
-                f"Ditambahkan ke Daftar Pengguna auth dari grup ini."
+                f"Ditambahkan ke Daftar Pengguna resmi dari grup ini."
             )
             return
         else:
-            await message.reply_text(f"Sudah ada di Daftar Pengguna auth.")
+            await message.reply_text(f"Sudah ada di Daftar Pengguna resmi.")
         return
     from_user_id = message.from_user.id
     user_id = message.reply_to_message.from_user.id
@@ -78,7 +74,7 @@ async def auth(_, message: Message):
         count += 1
     if int(count) == 20:
         return await message.reply_text(
-            "Anda hanya dapat memiliki 20 Pengguna Di Daftar Pengguna Auth Grup Anda (AUL)"
+            "Anda hanya dapat memiliki 20 Pengguna Di Daftar Pengguna resmi Grup Anda (AUL)"
         )
     if token not in _check:
         assis = {
@@ -89,11 +85,11 @@ async def auth(_, message: Message):
         }
         await save_authuser(message.chat.id, token, assis)
         await message.reply_text(
-            f"Ditambahkan ke Daftar Pengguna Auth dari grup ini."
+            f"Ditambahkan ke Daftar Pengguna resmi dari grup ini."
         )
         return
     else:
-        await message.reply_text(f"Sudah ada di Daftar Pengguna auth.")
+        await message.reply_text(f"Sudah ada di Daftar Pengguna resmi.")
 
 
 @app.on_message(filters.command("unauth") & filters.group)
@@ -113,19 +109,19 @@ async def whitelist_chat_func(_, message: Message):
         deleted = await delete_authuser(message.chat.id, token)
         if deleted:
             return await message.reply_text(
-                f"Dihapus dari Daftar Pengguna Auth Grup ini."
+                f"Dihapus dari Daftar Pengguna resmi Grup ini."
             )
         else:
-            return await message.reply_text(f"Bukan Pengguna Auth.")
+            return await message.reply_text(f"Bukan Pengguna resmi.")
     user_id = message.reply_to_message.from_user.id
     token = await int_to_alpha(user_id)
     deleted = await delete_authuser(message.chat.id, token)
     if deleted:
         return await message.reply_text(
-            f"Dihapus dari Daftar Pengguna Auth Grup ini."
+            f"Dihapus dari Daftar Pengguna resmi Grup ini."
         )
     else:
-        return await message.reply_text(f"Bukan Pengguna Auth.")
+        return await message.reply_text(f"Bukan Pengguna resmi.")
 
 
 @app.on_message(filters.command("authusers") & filters.group)
@@ -133,14 +129,14 @@ async def authusers(_, message: Message):
     _playlist = await get_authuser_names(message.chat.id)
     if not _playlist:
         return await message.reply_text(
-            f"Tidak ada Pengguna Auth di Grup ini.\n\nTambahkan pengguna Auth dengan /auth dan hapus dengan /unauth."
+            f"Tidak ada Pengguna resmi di Grup ini.\n\nTambahkan pengguna resmi dengan /auth dan hapus dengan /unauth."
         )
     else:
         j = 0
         m = await message.reply_text(
-            "Mengambil Pengguna Auth... Mohon Tunggu"
+            "Mengambil Pengguna Resmi... Mohon Tunggu"
         )
-        msg = f"**Authorised Users List[AUL]:**\n\n"
+        msg = f"**Daftar Pengguna Resmi[AUL]:**\n\n"
         for note in _playlist:
             _note = await get_authuser(message.chat.id, note)
             user_id = _note["auth_user_id"]
