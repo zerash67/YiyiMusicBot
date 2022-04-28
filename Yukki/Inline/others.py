@@ -11,33 +11,33 @@ def others_markup(videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="🔍 Mencari Lirik",
+                text="🔍 ᴍᴇɴᴄᴀʀɪ ʟɪʀɪᴋ",
                 callback_data=f"lyrics {videoid}|{user_id}",
             )
         ],
         [
             InlineKeyboardButton(
-                text="✛ Playlist Mu",
+                text="✛ ᴅᴀғᴛᴀʀ ᴘᴜᴛᴀʀ",
                 callback_data=f"your_playlist {videoid}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="✛ Playlist Group",
+                text="✛ ᴅᴀғᴛᴀʀ ᴘᴜᴛᴀʀ ɢʀᴏᴜᴘ",
                 callback_data=f"group_playlist {videoid}|{user_id}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="⬇️ Download Audio/Video",
+                text="⬇️ ᴜɴᴅᴜʜ ᴀᴜᴅɪᴏ/ᴠɪᴅᴇᴏ",
                 callback_data=f"audio_video_download {videoid}|{user_id}",
             )
         ],
         [
             InlineKeyboardButton(
-                text="⬅️ Kembali",
+                text="≼ ᴋᴇᴍʙᴀʟɪ",
                 callback_data=f"pr_go_back_timer {videoid}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="🗑 Tutup Menu",
+                text="🗑 ᴛᴜᴛᴜᴘ",
                 callback_data=f"close",
             ),
         ],
@@ -49,19 +49,19 @@ def download_markup(videoid, user_id):
     buttons = [
         [
             InlineKeyboardButton(
-                text="⬇️ Dapatkan Audio",
+                text="⬇️ ᴅᴀᴘᴀᴛᴋᴀɴ ᴀᴜᴅɪᴏ",
                 callback_data=f"gets audio|{videoid}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="⬇️ Dapatkan Video",
+                text="⬇️ ᴅᴀᴘᴀᴛᴋᴀɴ ᴠɪᴅᴇᴏ",
                 callback_data=f"gets video|{videoid}|{user_id}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="⬅️ Kembali", callback_data=f"goback {videoid}|{user_id}"
+                text="≼ ᴋᴇᴍʙᴀʟɪ", callback_data=f"goback {videoid}|{user_id}"
             ),
-            InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close"),
+            InlineKeyboardButton(text="🗑 ᴛᴜᴛᴜᴘ", callback_data=f"close"),
         ],
     ]
     return buttons
