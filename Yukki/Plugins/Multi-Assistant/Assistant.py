@@ -47,10 +47,10 @@ async def awaiting_message(client, message):
     else:
         flood[str(user_id)] = 1
     if flood[str(user_id)] > 5:
-        await message.reply_text("Spam Detected. User Blocked")
+        await message.reply_text("Spam Terdeteksi. Pengguna Diblokir")
         await client.send_message(
             LOG_GROUP_ID,
-            f"**Spam Detect Block On Assistant**\n\n- **Blocked User:** {message.from_user.mention}\n- **User ID:** {message.from_user.id}",
+            f"**Deteksi Spam Blok Pada Asisten**\n\n- **Pengguna yang diblokir:** {message.from_user.mention}\n- **User ID:** {message.from_user.id}",
         )
         return await client.block_user(user_id)
     await message.reply_text(
@@ -69,13 +69,13 @@ async def awaiting_message(client, message):
 async def pm_approve(client, message):
     if not message.reply_to_message:
         return await eor(
-            message, text="Reply to a user's message to approve."
+            message, text="Balas pesan pengguna untuk menyetujui."
         )
     user_id = message.reply_to_message.from_user.id
     if await is_pmpermit_approved(user_id):
-        return await eor(message, text="User is already approved to pm")
+        return await eor(message, text="Pengguna sudah disetujui untuk pesan pribadi")
     await approve_pmpermit(user_id)
-    await eor(message, text="User is approved to pm")
+    await eor(message, text="Pengguna disetujui untuk pesan pribadi")
 
 
 @Client.on_message(
@@ -89,11 +89,11 @@ async def pm_approve(client, message):
 async def pm_disapprove(client, message):
     if not message.reply_to_message:
         return await eor(
-            message, text="Reply to a user's message to disapprove."
+            message, text="Balas pesan pengguna untuk menolak."
         )
     user_id = message.reply_to_message.from_user.id
     if not await is_pmpermit_approved(user_id):
-        await eor(message, text="User is already disapproved to pm")
+        await eor(message, text="Pengguna sudah ditolak untuk pesan pribadi")
         async for m in client.iter_history(user_id, limit=6):
             if m.reply_markup:
                 try:
@@ -102,7 +102,7 @@ async def pm_disapprove(client, message):
                     pass
         return
     await disapprove_pmpermit(user_id)
-    await eor(message, text="User is disapproved to pm")
+    await eor(message, text="Pengguna ditolak untuk pesan pribadi")
 
 
 @Client.on_message(
@@ -115,9 +115,9 @@ async def pm_disapprove(client, message):
 )
 async def block_user_func(client, message):
     if not message.reply_to_message:
-        return await eor(message, text="Reply to a user's message to block.")
+        return await eor(message, text="Balas pesan pengguna untuk diblokir.")
     user_id = message.reply_to_message.from_user.id
-    await eor(message, text="Successfully blocked the user")
+    await eor(message, text="Berhasil memblokir pengguna")
     await client.block_user(user_id)
 
 
@@ -132,11 +132,11 @@ async def block_user_func(client, message):
 async def unblock_user_func(client, message):
     if not message.reply_to_message:
         return await eor(
-            message, text="Reply to a user's message to unblock."
+            message, text="Balas pesan pengguna untuk membuka blokir."
         )
     user_id = message.reply_to_message.from_user.id
     await client.unblock_user(user_id)
-    await eor(message, text="Successfully Unblocked the user")
+    await eor(message, text="Berhasil membuka blokir pengguna")
 
 
 @Client.on_message(
@@ -149,7 +149,7 @@ async def unblock_user_func(client, message):
 )
 async def set_pfp(client, message):
     if not message.reply_to_message or not message.reply_to_message.photo:
-        return await eor(message, text="Reply to a photo.")
+        return await eor(message, text="Balas ke foto.")
     photo = await message.reply_to_message.download()
     try:
         await client.set_profile_photo(photo=photo)
@@ -173,7 +173,7 @@ async def set_bio(client, message):
         bio = message.text.split(None, 1)[1]
         try:
             await client.update_profile(bio=bio)
-            await eor(message, text="Changed Bio.")
+            await eor(message, text="Bio diganti.")
         except Exception as e:
             await eor(message, text=e)
     else:
