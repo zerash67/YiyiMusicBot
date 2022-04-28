@@ -114,7 +114,7 @@
       "required": true
     },
     "LOG_SESSION": {
-      "description": "Masukkan session string pyrogram lain atau disamakan dengan session string seperti diatas.",
+      "description": "Masukkan session string pyrogram lain atau disamakan dengan session string saja.",
       "value": "",
       "required": true
     },
