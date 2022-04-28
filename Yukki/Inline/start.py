@@ -8,22 +8,22 @@ from Yukki import BOT_USERNAME
 def setting_markup2():
     buttons = [
         [
-            InlineKeyboardButton(text="🔈 Kualitas Suara", callback_data="AQ"),
-            InlineKeyboardButton(text="🎚 Volume Suara", callback_data="AV"),
+            InlineKeyboardButton(text="🔈 ᴋᴜᴀʟɪᴛᴀs sᴜᴀʀᴀ", callback_data="AQ"),
+            InlineKeyboardButton(text="🎚 ᴠᴏʟᴜᴍᴇ sᴜᴀʀᴀ", callback_data="AV"),
         ],
         [
             InlineKeyboardButton(
-                text="👥 Auth Users", callback_data="AU"
+                text="👥 ᴘᴇʀɪᴊɪɴᴀɴ", callback_data="AU"
             ),
             InlineKeyboardButton(
-                text="💻 Dashboard", callback_data="Dashboard"
+                text="💻 ᴅᴀsʜʙᴏᴀʀᴅ", callback_data="Dashboard"
             ),
         ],
         [
-            InlineKeyboardButton(text="❌ Tutup", callback_data="close"),
+            InlineKeyboardButton(text="✖️ ᴛᴜᴛᴜᴘ", callback_data="close"),
         ],
     ]
-    return f"⚙️  **{MUSIC_BOT_NAME} Pengaturan**", buttons
+    return f"⚙️  **{MUSIC_BOT_NAME} ᴘᴇɴɢᴀᴛᴜʀᴀɴ**", buttons
 
 
 def start_pannel():
@@ -31,76 +31,94 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📋 Menu Perintah", callback_data="shikhar"
+                    text="📋 ᴍᴇɴᴜ ᴘᴇʀɪɴᴛᴀʜ", callback_data="shikhar"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="⚙️ Pengaturan", callback_data="settingm"
+                    text="🔧 ᴘᴇɴɢᴀᴛᴜʀᴀɴ", callback_data="settingm"
                 )
             ],
         ]
-        return f"🎛  **Ini Adalah {MUSIC_BOT_NAME}**", buttons
+        return f"🎛  **sᴀʏᴀ ᴀᴅᴀʟᴀʜ {MUSIC_BOT_NAME}**", buttons
     if not SUPPORT_CHANNEL and SUPPORT_GROUP:
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📋 Menu Perintah", callback_data="shikhar"
+                    text="📋 ᴍᴇɴᴜ ᴘᴇʀɪɴᴛᴀʜ", callback_data="shikhar"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="⚙️ Pengaturan", callback_data="settingm"
+                    text="🔧 ᴘᴇɴɢᴀᴛᴜʀᴀɴ", callback_data="settingm"
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="📋Support Group", url=f"{SUPPORT_GROUP}"
+                    text="📨ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
                 ),
             ],
+            [
+                 InlineKeyboardButton(
+                    text="🥸 ᴏᴡɴᴇʀ 🥸", 
+                url=f"https://t.me/gausahsokablunyet",
+               )
+            ],
         ]
-        return f"🎛  **Ini Adalah {MUSIC_BOT_NAME}*", buttons
+        return f"🎛  **sᴀʏᴀ ᴀᴅᴀʟᴀʜ {MUSIC_BOT_NAME}*", buttons
     if SUPPORT_CHANNEL and not SUPPORT_GROUP:
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📋 Menu Perintah", callback_data="shikhar"
+                    text="📋 ᴍᴇɴᴜ ᴘᴇʀɪɴᴛᴀʜ", callback_data="shikhar"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="⚙️ Pengaturan", callback_data="settingm"
+                    text="🔧 ᴘᴇɴɢᴀᴛᴜʀᴀɴ", callback_data="settingm"
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="⚡Channel", url=f"{SUPPORT_CHANNEL}"
+                    text="📢ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
                 ),
             ],
+            [
+                 InlineKeyboardButton(
+                    text="🥸 ᴏᴡɴᴇʀ 🥸", 
+                url=f"https://t.me/gausahsokablunyet",
+               )
+            ],
         ]
-        return f"🎛  **Ini Adalah {MUSIC_BOT_NAME}**", buttons
+        return f"🎛  **sᴀʏᴀ ᴀᴅᴀʟᴀʜ {MUSIC_BOT_NAME}**", buttons
     if SUPPORT_CHANNEL and SUPPORT_GROUP:
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📋 Menu Perintah", callback_data="shikhar"
+                    text="📋 ᴍᴇɴᴜ ᴘᴇʀɪɴᴛᴀʜ", callback_data="shikhar"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="⚙️ Pengaturan", callback_data="settingm"
+                    text="🔧 ᴘᴇɴɢᴀᴛᴜʀᴀɴ", callback_data="settingm"
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="⚡Channel", url=f"{SUPPORT_CHANNEL}"
+                    text="📢ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="⚡Group", url=f"{SUPPORT_GROUP}"
+                    text="📨ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
                 ),
             ],
+            [
+                 InlineKeyboardButton(
+                    text="🥸 ᴏᴡɴᴇʀ 🥸", 
+                url=f"https://t.me/gausahsokablunyet",
+               )
+            ],
         ]
-        return f"🎛  **Ini Adalah {MUSIC_BOT_NAME}**", buttons
+        return f"🎛  **sᴀʏᴀ ᴀᴅᴀʟᴀʜ {MUSIC_BOT_NAME}**", buttons
 
 
 def private_panel():
@@ -108,131 +126,149 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📋 Menu Perintah",
+                    text="🗂 ᴍᴇɴᴜ ᴘᴇʀɪɴᴛᴀʜ",
                     callback_data="search_helper_mess",
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    "➕ Tambahkan Ke Group",
+                    "➕ ᴛᴀᴍʙᴀʜᴋᴀɴ sᴀʏᴀ ᴋᴇ ɢʀᴏᴜᴘ",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
         ]
-        return f"🎛  **Ini Adalah {MUSIC_BOT_NAME}**", buttons
+        return f"🎛  **sᴀʏᴀ ᴀᴅᴀʟᴀʜ {MUSIC_BOT_NAME}**", buttons
     if not SUPPORT_CHANNEL and SUPPORT_GROUP:
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📋 Menu Perintah",
+                    text="🗂 ᴍᴇɴᴜ ᴘᴇʀɪɴᴛᴀʜ",
                     callback_data="search_helper_mess",
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    "➕ Tambahkan Ke Group",
+                    "➕ ᴛᴀᴍʙᴀʜᴋᴀɴ sᴀʏᴀ ᴋᴇ ɢʀᴏᴜᴘ",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="⚡Group", url=f"{SUPPORT_GROUP}"
+                    text="📨ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
                 ),
             ],
+            [
+                 InlineKeyboardButton(
+                    text="🥸 ᴏᴡɴᴇʀ 🥸", 
+                url=f"https://t.me/gausahsokablunyet",
+               )
+            ],
         ]
-        return f"🎛  **Ini Adalah {MUSIC_BOT_NAME}*", buttons
+        return f"🎛  **sᴀʏᴀ ᴀᴅᴀʟᴀʜ {MUSIC_BOT_NAME}*", buttons
     if SUPPORT_CHANNEL and not SUPPORT_GROUP:
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📋 Menu Perintah",
+                    text="🗂 ᴍᴇɴᴜ ᴘᴇʀɪɴᴛᴀʜ",
                     callback_data="search_helper_mess",
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    "➕ Tambahkan Ke Group",
+                    "➕ ᴛᴀᴍʙᴀʜᴋᴀɴ sᴀʏᴀ ᴋᴇ ɢʀᴏᴜᴘ",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="⚡Channel", url=f"{SUPPORT_CHANNEL}"
+                    text="📢ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
                 ),
             ],
+            [
+                 InlineKeyboardButton(
+                    text="🥸 ᴏᴡɴᴇʀ 🥸", 
+                url=f"https://t.me/gausahsokablunyet",
+               )
+            ],
         ]
-        return f"🎛  **This is {MUSIC_BOT_NAME}**", buttons
+        return f"🎛  **sᴀʏᴀ ᴀᴅᴀʟᴀʜ {MUSIC_BOT_NAME}**", buttons
     if SUPPORT_CHANNEL and SUPPORT_GROUP:
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📋 Menu Perintah",
+                    text="🗂 ᴍᴇɴᴜ ᴘᴇʀɪɴᴛᴀʜ",
                     callback_data="search_helper_mess",
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    "➕ Tambahkan Ke Group",
+                    "➕ ᴛᴀᴍʙᴀʜᴋᴀɴ sᴀʏᴀ ᴋᴇ ɢʀᴏᴜᴘ",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="⚡Channel", url=f"{SUPPORT_CHANNEL}"
+                    text="📢ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="⚡Group", url=f"{SUPPORT_GROUP}"
+                    text="📨ɢʀᴏᴜᴘ", url=f"{SUPPORT_GROUP}"
                 ),
             ],
+            [
+                 InlineKeyboardButton(
+                    text="🥸 ᴏᴡɴᴇʀ 🥸", 
+                url=f"https://t.me/gausahsokablunyet",
+               )
+            ],
         ]
-        return f"🎛  **Ini Adalah {MUSIC_BOT_NAME}**", buttons
+        return f"🎛  **sᴀʏᴀ ᴀᴅᴀʟᴀʜ {MUSIC_BOT_NAME}**", buttons
 
 
 def setting_markup():
     buttons = [
         [
-            InlineKeyboardButton(text="🔈 Kualitas Suara", callback_data="AQ"),
-            InlineKeyboardButton(text="🎚 Volume Suara", callback_data="AV"),
+            InlineKeyboardButton(text="🔈 ᴋᴜᴀʟɪᴛᴀs sᴜᴀʀᴀ", callback_data="AQ"),
+            InlineKeyboardButton(text="🎚 ᴠᴏʟᴜᴍᴇ sᴜᴀʀᴀ", callback_data="AV"),
         ],
         [
             InlineKeyboardButton(
-                text="👥 Auth Users", callback_data="AU"
+                text="👥 ᴘᴇʀɪᴊɪɴᴀɴ", callback_data="AU"
             ),
             InlineKeyboardButton(
-                text="💻 Dashboard", callback_data="Dashboard"
+                text="💻 ᴅᴀsʜʙᴏᴀʀᴅ", callback_data="Dashboard"
             ),
         ],
         [
-            InlineKeyboardButton(text="✖️ Tutup", callback_data="close"),
-            InlineKeyboardButton(text="🔙 Kembali", callback_data="okaybhai"),
+            InlineKeyboardButton(text="✖️ ᴛᴜᴛᴜᴘ", callback_data="close"),
+            InlineKeyboardButton(text="≼ ᴋᴇᴍʙᴀʟɪ", callback_data="okaybhai"),
         ],
     ]
-    return f"⚙️  **{MUSIC_BOT_NAME} Pengaturan**", buttons
+    return f"🔧  **{MUSIC_BOT_NAME} ᴘᴇɴɢᴀᴛᴜʀᴀɴ**", buttons
 
 
 def volmarkup():
     buttons = [
         [
             InlineKeyboardButton(
-                text="🔄 Reset Volume Audio 🔄", callback_data="HV"
+                text="🔄 ᴀᴛᴜʀ ᴜʟᴀɴɢ ᴠᴏʟᴜᴍᴇ 🔄", callback_data="HV"
             )
         ],
         [
-            InlineKeyboardButton(text="🔈 Vol Rendah", callback_data="LV"),
-            InlineKeyboardButton(text="🔉 Vol Medium", callback_data="MV"),
+            InlineKeyboardButton(text="🔈 ᴠᴏʟ ʀᴇɴᴅᴀʜ", callback_data="LV"),
+            InlineKeyboardButton(text="🔉 ᴠᴏʟ sᴇᴅᴀɴɢ", callback_data="MV"),
         ],
         [
-            InlineKeyboardButton(text="🔊 Vol Tinggi", callback_data="HV"),
-            InlineKeyboardButton(text="🔈 Vol Diperkuat", callback_data="VAM"),
+            InlineKeyboardButton(text="🔊 ᴠᴏʟ ᴛɪɴɢɢɪ", callback_data="HV"),
+            InlineKeyboardButton(text="🔈 ᴠᴏʟ sᴇɪᴍʙᴀɴɢ", callback_data="VAM"),
         ],
         [
             InlineKeyboardButton(
-                text="🔽 Custom Volume 🔽", callback_data="Custommarkup"
+                text="🔽 ᴠᴏʟᴜᴍᴇ ᴋᴜsᴛᴏᴍ 🔽", callback_data="Custommarkup"
             )
         ],
-        [InlineKeyboardButton(text="🔙 Kembali", callback_data="settingm")],
+        [InlineKeyboardButton(text="≼ ᴋᴇᴍʙᴀʟɪ", callback_data="settingm")],
     ]
-    return f"⚙️  **{MUSIC_BOT_NAME} Pengaturan**", buttons
+    return f"🔧  **{MUSIC_BOT_NAME} ᴘᴇɴɢᴀᴛᴜʀᴀɴ**", buttons
 
 
 def custommarkup():
@@ -249,25 +285,25 @@ def custommarkup():
             InlineKeyboardButton(text="+50", callback_data="PFZ"),
             InlineKeyboardButton(text="-50", callback_data="MFZ"),
         ],
-        [InlineKeyboardButton(text="🔼Custom Volume 🔼", callback_data="AV")],
+        [InlineKeyboardButton(text="🔼 ᴠᴏʟᴜᴍᴇ ᴋᴜsᴛᴏᴍ 🔼", callback_data="AV")],
     ]
-    return f"⚙️  **{MUSIC_BOT_NAME} Pengaturan**", buttons
+    return f"🔧  **{MUSIC_BOT_NAME} ᴘᴇɴɢᴀᴛᴜʀᴀɴ**", buttons
 
 
 def usermarkup():
     buttons = [
         [
-            InlineKeyboardButton(text="👥 Semua", callback_data="EVE"),
-            InlineKeyboardButton(text="🤴 Admin", callback_data="AMS"),
+            InlineKeyboardButton(text="👥 sᴇᴍᴜᴀ", callback_data="EVE"),
+            InlineKeyboardButton(text="🤴 ᴀᴅᴍɪɴ", callback_data="AMS"),
         ],
         [
             InlineKeyboardButton(
-                text="📖 List Pengguna Auth", callback_data="USERLIST"
+                text="📖 ᴅᴀғᴛᴀʀ ᴘᴇʀɪᴊɪɴᴀɴ", callback_data="USERLIST"
             )
         ],
-        [InlineKeyboardButton(text="🔙 Kembali", callback_data="settingm")],
+        [InlineKeyboardButton(text="≼ ᴋᴇᴍʙᴀʟɪ", callback_data="settingm")],
     ]
-    return f"⚙️  **{MUSIC_BOT_NAME} Pengaturan**", buttons
+    return f"🔧  **{MUSIC_BOT_NAME} ᴘᴇɴɢᴀᴛᴜʀᴀɴ**", buttons
 
 
 def dashmarkup():
@@ -280,6 +316,6 @@ def dashmarkup():
             InlineKeyboardButton(text="💻 Cpu", callback_data="CPT"),
             InlineKeyboardButton(text="💽 Disk", callback_data="DIT"),
         ],
-        [InlineKeyboardButton(text="🔙 Go back", callback_data="settingm")],
+        [InlineKeyboardButton(text="≼ ᴋᴇᴍʙᴀʟɪ", callback_data="settingm")],
     ]
-    return f"⚙️  **{MUSIC_BOT_NAME} Pengaturan**", buttons
+    return f"🔧  **{MUSIC_BOT_NAME} ᴘᴇɴɢᴀᴛᴜʀᴀɴ**", buttons
