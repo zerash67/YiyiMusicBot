@@ -39,7 +39,7 @@
       "required": true
     },
     "MONGO_DB_URI": {
-      "description": "Mongo DB URL",
+      "description": "Masukkan mongodb kalian. Ambil di www.mongodb.com",
       "value": "",
       "required": true
     },
@@ -69,7 +69,7 @@
       "required": false
     },
     "STRING_SESSION1": {
-      "description": "Masukan Pyrogram String Session. Untuk Asisstant ke satu.",
+      "description": "Masukkan string session pyrogram kalian. Jika belum ada silahkan ambil di https://replit.com/@Achmad-TaufiqTa/NdiString-1?lite=1&outputonly=1.",
       "value": "",
       "required": true
     },
@@ -94,18 +94,18 @@
       "required": false
     },
     "HEROKU_API_KEY": {
-      "description": "API Key akun Heroku Anda",
+      "description": "Masukkan API Key heroku kalian. Ambil di https://dashboard.heroku.com/account",
       "value": "",
       "required": false
     },
     "HEROKU_APP_NAME": {
-      "description": "Nama App Name Heroku mu",
+      "description": "Nama App Name Heroku mu (Sesuai nama paling atas)",
       "value": "",
       "required": false
     },
     "LOG_GROUP_ID": {
-      "description": "Log Group Id mu, tambahkan bot Anda dan promosikan sebagai admin dengan hak penuh!.  Gunakan Grup.  Tolong jangan gunakan ID Channel.",
-      "value": "",
+      "description": "Log Group Id mu, tambahkan bot Anda dan promosikan sebagai admin dengan hak penuh!. Awalan id haru -100.",
+      "value": "-1001397753752",
       "required": true
     },
     "SUDO_USERS": {
@@ -114,17 +114,17 @@
       "required": true
     },
     "LOG_SESSION": {
-      "description": "Masukan Pyrogram String Session Asisstant kesatu saja .",
+      "description": "Masukkan session string pyrogram lain atau disamakan dengan session string seperti diatas.",
       "value": "",
       "required": true
     },
     "UPSTREAM_REPO": {
-      "description": "Silahkan /skip saja ",
+      "description": "Silahkan /skip saja jika tidak punya atau tidak mengerti ",
       "value": "https://github.com/Ndiproject/NdiMusicBot",
       "required": true
     },
     "UPSTREAM_BRANCH": {
-      "description": "gausah diganti",
+      "description": "Silahkan /skip saja",
       "value": "master",
       "required": true
     }
