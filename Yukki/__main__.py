@@ -118,11 +118,11 @@ async def initiate_bot():
         try:
             await ASS_CLI_1.send_message(
                 LOG_GROUP_ID,
-                "<b>Selamat!! Akun Asisten 1 Berhasil Dimulai!</b>",
+                "<b>Selamat!! Akun Asisten Berhasil Dimulai!</b>",
             )
         except Exception as e:
             print(
-                "\nAkun Asisten 1 gagal mengakses Log Group. Pastikan akun asisten dimasukkan Log Group, dan jadikan admin!"
+                "\nAkun Asisten gagal mengakses Log Group. Pastikan akun asisten dimasukkan Log Group, dan jadikan admin!"
             )
             console.print(f"\n[red]Bot Berhenti")
             return
@@ -131,7 +131,7 @@ async def initiate_bot():
             await ASS_CLI_1.join_chat("friendzonesokin")
         except:
             pass
-        console.print(f"├[red] Asisten 1 Berhasil Dimulai {ASSNAME1}!")
+        console.print(f"├[red] Asisten Berhasil Dimulai {ASSNAME1}!")
         console.print(f"├[green] ID :- {ASSID1}!")
     if STRING2 != "None":
         try:
