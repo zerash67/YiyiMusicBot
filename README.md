@@ -91,7 +91,7 @@ $ bash start
 
 - [Telegram Channel](https://t.me/chFZsokin)
 - [Telegram Support Group](https://t.me/friendzonesokin)
-- [Contact Owner](https://t.me/NotReallyShikhar)
+- [Contact Owner](https://t.me/gausahsokablunyet)
 
 
 ## License
