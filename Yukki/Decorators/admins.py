@@ -65,7 +65,7 @@ def AdminRightsCheckCB(mystic):
                     )
                     if token not in _check:
                         return await CallbackQuery.answer(
-                            "You don't have the required permission to perform this action.\nPermission: MANAGE VOICE CHATS",
+                            "Anda tidak memiliki izin yang diperlukan untuk melakukan tindakan ini.\nIjin: MEMBUTUHKAN ADMIN DENGAN HAK MENGELOLA OBROLAN SUARA",
                             show_alert=True,
                         )
         return await mystic(_, CallbackQuery)
