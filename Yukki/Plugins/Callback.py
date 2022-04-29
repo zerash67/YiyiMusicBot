@@ -350,14 +350,14 @@ async def play_playlist(_, CallbackQuery):
         user_id = CallbackQuery.message.chat.id
         third_name = chat_title
     else:
-        return await CallbackQuery.answer("Error In Playlist.")
+        return await CallbackQuery.answer("Kesalahan di Daftar Putar.")
     if CallbackQuery.message.chat.id not in db_mem:
         db_mem[CallbackQuery.message.chat.id] = {}
     try:
         read1 = db_mem[CallbackQuery.message.chat.id]["live_check"]
         if read1:
             return await CallbackQuery.answer(
-                "Live Streaming Playing...Stop it to play playlist",
+                "Pemutaran Siaran Langsung...Hentikan untuk memutar daftar putar",
                 show_alert=True,
             )
         else:
@@ -366,14 +366,14 @@ async def play_playlist(_, CallbackQuery):
         pass
     if not _playlist:
         return await CallbackQuery.answer(
-            f"This User has no playlist on servers.", show_alert=True
+            f"Pengguna ini tidak memiliki daftar putar di server.", show_alert=True
         )
     else:
         await CallbackQuery.message.delete()
         mystic = await CallbackQuery.message.reply_text(
-            f"Starting Playlist Of {third_name}.\n\nRequested By:- {CallbackQuery.from_user.first_name}"
+            f"Memulai Daftar Putar dari {third_name}.\n\nAtas Permintaan:- {CallbackQuery.from_user.first_name}"
         )
-        msg = f"Queued Playlist:\n\n"
+        msg = f"Antrian Daftar Putar:\n\n"
         j = 0
         for_t = 0
         for_p = 0
@@ -388,7 +388,7 @@ async def play_playlist(_, CallbackQuery):
                 j += 1
                 for_p = 1
                 msg += f"{j}- {title[:50]}\n"
-                msg += f"Queued Position- {position}\n\n"
+                msg += f"Posisi Antrian- {position}\n\n"
                 if videoid not in db_mem:
                     db_mem[videoid] = {}
                 db_mem[videoid]["username"] = CallbackQuery.from_user.mention
@@ -411,7 +411,7 @@ async def play_playlist(_, CallbackQuery):
                     thumbnail,
                 ) = get_yt_info_id(videoid)
                 mystic = await mystic.edit(
-                    f"**{MUSIC_BOT_NAME} Downloader**\n\n**Title:** {title[:50]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
+                    f"**{MUSIC_BOT_NAME} Mengunduh**\n\n**Judul:** {title[:50]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
                 )
                 downloaded_file = await loop.run_in_executor(
                     None, download, videoid, mystic, title
@@ -446,7 +446,7 @@ async def play_playlist(_, CallbackQuery):
                 got_queue.append(to_append)
                 await music_on(chat_id)
                 await add_active_chat(chat_id)
-                cap = f"🎥<b>__Playing:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n💡<b>__Info:__</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤**__Requested by:__** {CallbackQuery.from_user.mention}"
+                cap = f"🎥<b>__Bermain:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n💡<b>__Info:__</b> [Dapatkan Informasi Tambahan](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤**__Atas Permintaan:__** {CallbackQuery.from_user.mention}"
                 final_output = await CallbackQuery.message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
@@ -456,7 +456,7 @@ async def play_playlist(_, CallbackQuery):
         await mystic.delete()
         if for_p == 1:
             m = await CallbackQuery.message.reply_text(
-                "Pasting Queued Playlist to Bin"
+                "Menempel Daftar Putar Antrian ke Sampah"
             )
             link = await paste_queue(msg)
             preview = link + "/preview.png"
@@ -465,7 +465,7 @@ async def play_playlist(_, CallbackQuery):
             if await isPreviewUp(preview):
                 await CallbackQuery.message.reply_photo(
                     photo=preview,
-                    caption=f"This is Queued Playlist of {third_name}.\n\nPlayed by :- {CallbackQuery.from_user.mention}",
+                    caption=f"Ini adalah Antrian Daftar Putar dari{third_name}.\n\nDimainkan oleh :- {CallbackQuery.from_user.mention}",
                     quote=False,
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
@@ -477,7 +477,7 @@ async def play_playlist(_, CallbackQuery):
                 await m.delete()
         else:
             await CallbackQuery.message.reply_text(
-                "Only 1 Music in Playlist.. No more music to add in queue."
+                "Hanya 1 Musik di Daftar Putar.. Tidak ada lagi musik untuk ditambahkan dalam antrian."
             )
         if for_t == 1:
             await start_timer(
@@ -504,14 +504,14 @@ async def group_playlist(_, CallbackQuery):
         )
         if not a.can_manage_voice_chats:
             return await CallbackQuery.answer(
-                "You don't have the required permission to perform this action.\nPermission: MANAGE VOICE CHATS",
+                "Anda tidak memiliki ijin yang diperlukan untuk melakukan tindakan ini.\nIjin: KELOLA OBROLAN SUARA",
                 show_alert=True,
             )
         user_id = CallbackQuery.message.chat.id
     _count = await get_playlist_names(user_id, genre)
     if not _count:
         sex = await CallbackQuery.message.reply_text(
-            f"Welcome To {MUSIC_BOT_NAME}'s Playlist Feature.\n\nGenerating Your  Playlist In Database...Please wait.\n\nGenre:- {genre}"
+            f"Selamat Datang di {MUSIC_BOT_NAME} Fitur Daftar Putar.\n\nMembuat Daftar Putar Anda Di Basis Data...Mohon Tunggu.\n\nAliran:- {genre}"
         )
         await asyncio.sleep(2)
         await sex.delete()
@@ -521,7 +521,7 @@ async def group_playlist(_, CallbackQuery):
     count = int(count)
     if count == 50:
         return await CallbackQuery.answer(
-            "Sorry! You can only have 50 music in a playlist.",
+            "Maaf! Anda hanya dapat memiliki 50 musik dalam daftar putar.",
             show_alert=True,
         )
     loop = asyncio.get_event_loop()
@@ -531,7 +531,7 @@ async def group_playlist(_, CallbackQuery):
     title = title[:50]
     if _check:
         return await CallbackQuery.message.reply_text(
-            f"{CallbackQuery.from_user.mention}, Its already in the Playlist!"
+            f"{CallbackQuery.from_user.mention}, Sudah ada di Daftar Putar!"
         )
     assis = {
         "videoid": videoid,
@@ -541,7 +541,7 @@ async def group_playlist(_, CallbackQuery):
     await save_playlist(user_id, videoid, assis, genre)
     Name = CallbackQuery.from_user.first_name
     return await CallbackQuery.message.reply_text(
-        f"Added to {type}'s {genre} Playlist by {CallbackQuery.from_user.mention}"
+        f"Ditambahkan ke {type} {genre} Daftar Putar oleh {CallbackQuery.from_user.mention}"
     )
 
 
@@ -559,22 +559,22 @@ async def check_playlist(_, CallbackQuery):
     _playlist = await get_playlist_names(user_id, genre)
     if not _playlist:
         return await CallbackQuery.answer(
-            f"No {genre} Playlist on servers. Try adding musics in playlist.",
+            f"Tidak ada {genre} Daftar Putar di server. Coba tambahkan musik ke Daftar Putar.",
             show_alert=True,
         )
     else:
         j = 0
         await CallbackQuery.answer()
         await CallbackQuery.message.delete()
-        msg = f"Fetched Playlist:\n\n"
+        msg = f"Mengambil Daftar Putar:\n\n"
         for shikhar in _playlist:
             j += 1
             _note = await get_playlist(user_id, shikhar, genre)
             title = _note["title"]
             duration = _note["duration"]
             msg += f"{j}- {title[:60]}\n"
-            msg += f"    Duration- {duration} Min(s)\n\n"
-        m = await CallbackQuery.message.reply_text("Pasting Playlist to Bin")
+            msg += f"    Durasi- {duration} Menit\n\n"
+        m = await CallbackQuery.message.reply_text("Menempelkan Daftar Putar ke Bin")
         link = await paste_queue(msg)
         preview = link + "/preview.png"
         url = link + "/index.txt"
@@ -584,7 +584,7 @@ async def check_playlist(_, CallbackQuery):
         if await isPreviewUp(preview):
             await CallbackQuery.message.reply_photo(
                 photo=preview,
-                caption=f"This is Playlist of {user_name}.",
+                caption=f"Ini Daftar Putar dari {user_name}.",
                 quote=False,
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
@@ -610,7 +610,7 @@ async def del_playlist(_, CallbackQuery):
         )
         if not a.can_manage_voice_chats:
             return await CallbackQuery.answer(
-                "You don't have the required permission to perform this action.\nPermission: MANAGE VOICE CHATS",
+                "Anda tidak memiliki ijin yang diperlukan untuk melakukan tindakan ini.\nIjin: KELOLA OBROLAN SUARA",
                 show_alert=True,
             )
         user_id = CallbackQuery.message.chat.id
@@ -618,7 +618,7 @@ async def del_playlist(_, CallbackQuery):
     _playlist = await get_playlist_names(user_id, genre)
     if not _playlist:
         return await CallbackQuery.answer(
-            "Group has no Playlist on Bot's Server", show_alert=True
+            "Group tidak memiliki Daftar Putar di Server Bot", show_alert=True
         )
     else:
         await CallbackQuery.message.delete()
@@ -626,7 +626,7 @@ async def del_playlist(_, CallbackQuery):
         for shikhar in _playlist:
             await delete_playlist(user_id, shikhar, genre)
     await CallbackQuery.message.reply_text(
-        f"Successfully deleted {type}'s {genre} whole playlist\n\nBy :- {CallbackQuery.from_user.mention}"
+        f"Berhasil Dihapus {type} {genre} Seluruh Daftar Putar\n\nOleh :- {CallbackQuery.from_user.mention}"
     )
 
 
