@@ -43,7 +43,7 @@ async def forceclose(_, CallbackQuery):
     query, user_id = callback_request.split("|")
     if CallbackQuery.from_user.id != int(user_id):
         return await CallbackQuery.answer(
-            "You're not allowed to close this.", show_alert=True
+            "Anda tidak diijinkan untuk menutup ini.", show_alert=True
         )
     await CallbackQuery.message.delete()
     await CallbackQuery.answer()
@@ -59,35 +59,35 @@ async def admin_risghts(_, CallbackQuery):
     command = CallbackQuery.matches[0].group(1)
     if not await is_active_chat(CallbackQuery.message.chat.id):
         return await CallbackQuery.answer(
-            "Nothing is playing on voice chat.", show_alert=True
+            "Tidak ada yang diputar di obrolan suara.", show_alert=True
         )
     chat_id = CallbackQuery.message.chat.id
     if command == "pausecb":
         if not await is_music_playing(chat_id):
             return await CallbackQuery.answer(
-                "Music is already Paused", show_alert=True
+                "Musik sudah Dijeda", show_alert=True
             )
         await music_off(chat_id)
         await pause_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            f"🎧 Voicechat Paused by {CallbackQuery.from_user.mention}!",
+            f"⏸️ Obrolan Suara dijeda oleh {CallbackQuery.from_user.mention}!",
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
-        await CallbackQuery.answer("Paused", show_alert=True)
+        await CallbackQuery.answer("Dijeda", show_alert=True)
     if command == "resumecb":
         if await is_music_playing(chat_id):
             return await CallbackQuery.answer(
-                "Music is already Resumed.", show_alert=True
+                "Musik sudah Dilanjutkan.", show_alert=True
             )
         await music_on(chat_id)
         await resume_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            f"🎧 Voicechat Resumed by {CallbackQuery.from_user.mention}!",
+            f"▶️ Obrolan Suara Dilanjutkan oleh {CallbackQuery.from_user.mention}!",
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
-        await CallbackQuery.answer("Resumed", show_alert=True)
+        await CallbackQuery.answer("Dilanjutkan", show_alert=True)
     if command == "stopcb":
         if CallbackQuery.message.chat.id not in db_mem:
             db_mem[CallbackQuery.message.chat.id] = {}
@@ -101,11 +101,11 @@ async def admin_risghts(_, CallbackQuery):
         await remove_active_video_chat(chat_id)
         await stop_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            f"🎧 Voicechat End/Stopped by {CallbackQuery.from_user.mention}!",
+            f"⏹️ Obrolan Suara Berakhir/Dihentikan oleh {CallbackQuery.from_user.mention}!",
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
-        await CallbackQuery.answer("Stopped", show_alert=True)
+        await CallbackQuery.answer("Berhenti", show_alert=True)
     if command == "skipcb":
         if CallbackQuery.message.chat.id not in db_mem:
             db_mem[CallbackQuery.message.chat.id] = {}
@@ -116,12 +116,12 @@ async def admin_risghts(_, CallbackQuery):
             await remove_active_chat(chat_id)
             await remove_active_video_chat(chat_id)
             await CallbackQuery.message.reply_text(
-                f"No more music in __Queue__ \n\nLeaving Voice Chat..Button Used By :- {CallbackQuery.from_user.mention}"
+                f"Tidak ada lagi musik di __Antrian__ \n\nMeninggalkan Obrolan Suara..Tombol Digunakan Oleh :- {CallbackQuery.from_user.mention}"
             )
             await stop_stream(chat_id)
             await CallbackQuery.message.delete()
             await CallbackQuery.answer(
-                "Skipped. No more music in Queue", show_alert=True
+                "Dilewati. Tidak ada lagi musik di Antrian", show_alert=True
             )
             return
         else:
@@ -133,7 +133,7 @@ async def admin_risghts(_, CallbackQuery):
             aud = 0
             if str(finxx) == "raw":
                 await CallbackQuery.message.delete()
-                await CallbackQuery.answer("Skipped!", show_alert=True)
+                await CallbackQuery.answer("Dilewati!", show_alert=True)
                 await skip_stream(chat_id, videoid)
                 afk = videoid
                 title = db_mem[videoid]["title"]
@@ -167,7 +167,7 @@ async def admin_risghts(_, CallbackQuery):
                 final_output = await CallbackQuery.message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"<b>__Skipped Voice Chat__</b>\n\n🎥<b>__Started Playing:__</b> {title} \n⏳<b>__Duration:__</b> {duration_min} \n👤<b>__Requested by:__ </b> {mention}",
+                    caption=f"<b>__Obrolan Suara Dilewati__</b>\n\n🎥<b>__Mulai Bermain:__</b> {title} \n⏱️<b>__Durasi:__</b> {duration_min} Menit\n👤<b>__Atas Permintaan:__ </b> {mention}",
                 )
                 await start_timer(
                     videoid,
@@ -182,7 +182,7 @@ async def admin_risghts(_, CallbackQuery):
                 afk = videoid
                 await CallbackQuery.answer()
                 mystic = await CallbackQuery.message.reply_text(
-                    "Skipped! Please Wait Changing Video Stream...."
+                    "Dilewati! Harap Tunggu Mengubah Aliran Video...."
                 )
                 read = (str(videoid)).replace("s1s_", "", 1)
                 s = read.split("_+_")
@@ -193,7 +193,7 @@ async def admin_risghts(_, CallbackQuery):
                         await skip_video_stream(chat_id, videoid, 720, mystic)
                     except Exception as e:
                         return await mystic.edit(
-                            f"Error while changing video stream.\n\nPossible Reason:- {e}"
+                            f"Kesalahan saat mengubah aliran video.\n\nKemungkinan Alasan:- {e}"
                         )
                     buttons = secondary_markup2(
                         "Smex1", CallbackQuery.from_user.id
@@ -204,7 +204,7 @@ async def admin_risghts(_, CallbackQuery):
                         photo="Utils/Telegram.JPEG",
                         reply_markup=InlineKeyboardMarkup(buttons),
                         caption=(
-                            f"<b>__Skipped Video Chat__</b>\n\n👤**__Requested by:__** {mention}"
+                            f"<b>__Obrolan Suara Dilewati__</b>\n\n👤**__Atas Permintaan:__** {mention}"
                         ),
                     )
                     await mystic.delete()
@@ -218,7 +218,7 @@ async def admin_risghts(_, CallbackQuery):
                     nrs, ytlink = await get_m3u8(videoid)
                     if nrs == 0:
                         return await mystic.edit(
-                            "Failed to fetch Video Formats.",
+                            "Gagal mengambil Format Video.",
                         )
                     try:
                         await skip_video_stream(
@@ -226,7 +226,7 @@ async def admin_risghts(_, CallbackQuery):
                         )
                     except Exception as e:
                         return await mystic.edit(
-                            f"Error while changing video stream.\n\nPossible Reason:- {e}"
+                            f"Kesalahan saat mengubah aliran video.\n\nKemungkinan Alasan:- {e}"
                         )
                     theme = await check_theme(chat_id)
                     c_title = CallbackQuery.message.chat.title
@@ -244,7 +244,7 @@ async def admin_risghts(_, CallbackQuery):
                         photo=thumb,
                         reply_markup=InlineKeyboardMarkup(buttons),
                         caption=(
-                            f"<b>__Skipped Video Chat__</b>\n\n🎥<b>__Started Video Playing:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n👤**__Requested by:__** {mention}"
+                            f"<b>__Obrolan Video yang Dilewati__</b>\n\n🎥<b>__Memulai Pemutaran Video:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n👤**__Atas Permintaan:__** {mention}"
                         ),
                     )
                     os.remove(thumb)
@@ -260,10 +260,10 @@ async def admin_risghts(_, CallbackQuery):
             else:
                 await CallbackQuery.message.delete()
                 await CallbackQuery.answer(
-                    "Skipped! Playlist Playing....", show_alert=True
+                    "Dilewati! Putar Daftar Putar....", show_alert=True
                 )
                 mystic = await CallbackQuery.message.reply_text(
-                    f"**{MUSIC_BOT_NAME} Playlist Function**\n\n__Downloading Next Music From Playlist....__\n\nButton Used By :- {CallbackQuery.from_user.mention}"
+                    f"**{MUSIC_BOT_NAME} Fungsi Daftar Putar**\n\n__Mengunduh Musik Berikutnya Dari Daftar Putar....__\n\nTombol digunakan Oleh :- {CallbackQuery.from_user.mention}"
                 )
                 (
                     title,
@@ -272,7 +272,7 @@ async def admin_risghts(_, CallbackQuery):
                     thumbnail,
                 ) = get_yt_info_id(videoid)
                 await mystic.edit(
-                    f"**{MUSIC_BOT_NAME} Downloader**\n\n**Title:** {title[:50]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
+                    f"**{MUSIC_BOT_NAME} Mengunduh**\n\n**Judul:** {title[:50]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
                 )
                 downloaded_file = await loop.run_in_executor(
                     None, download, videoid, mystic, title
@@ -302,7 +302,7 @@ async def admin_risghts(_, CallbackQuery):
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=(
-                        f"<b>__Skipped Voice Chat__</b>\n\n🎥<b>__Started Playing:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n⏳<b>__Duration:__</b> {duration_min} Mins\n👤**__Requested by:__** {mention}"
+                        f"<b>__Obrolan Suara Dilewati__</b>\n\n🎥<b>__Mulai Bermain:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n⏱️<b>__Durasi:__</b> {duration_min} Menit\n👤**__Atas Permintaan:__** {mention}"
                     ),
                 )
                 os.remove(thumb)
