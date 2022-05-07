@@ -60,18 +60,27 @@ async def welcome(_, message: Message):
                 ) = await get_assistant_details(ran_ass)
                 out = start_pannel()
                 await message.reply_text(
-                    f"Selamat Datang Di {MUSIC_BOT_NAME}\n\nPromosikan saya sebagai administrator di grup Anda jika tidak, saya tidak akan berfungsi dengan baik.\n\nNama Pengguna Asisten:- @{ASS_USERNAME}\nID Asisten:- {ASS_ID}",
+                    f"""
+  ┏━━━━•᪣•°• -𖣔- •°•᪣•━━━┓
+     ┏━━┓┏━━┓┏━━┓┏━━┓ 
+     ┗━┓┃┃┏┓┃┗━┓┃┗━┓┃ 
+     ┏━┛┃┃┃┃┃┏━┛┃┏━┛┃
+     𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙺𝙰𝙼𝙸 𝚈𝙰 𝙶𝚄𝚈𝚂🙏
+     ┃┗━┓┃┗┛┃┃┗━┓┃┗━┓
+     ┗━━┛┗━━┛┗━━┛┗━━┛
+  ┗━━━━•᪣•°• -𖣔- •°•᪣•━━━┛
+👋 Selamat Datang Di {MUSIC_BOT_NAME}\n\nPromosikan saya sebagai administrator di grup Anda jika tidak, saya tidak akan berfungsi dengan baik.\n\nNama Pengguna Asisten:- @{ASS_USERNAME}\nID Asisten:- {ASS_ID}""",
                     reply_markup=InlineKeyboardMarkup(out[1]),
                 )
             if member.id in ASSIDS:
                 return await remove_active_chat(chat_id)
             if member.id in OWNER_ID:
                 return await message.reply_text(
-                    f"Pemilik{MUSIC_BOT_NAME}[{member.mention}] baru saja bergabung digroup ini."
+                    f"🥸 Pemilik Bot {MUSIC_BOT_NAME}[{member.mention}] baru saja bergabung digroup ini."
                 )
             if member.id in SUDOERS:
                 return await message.reply_text(
-                    f"Seorang anggota Pengguna Sudo {MUSIC_BOT_NAME}[{member.mention}] baru saja bergabung dengan Group ini."
+                    f"⛑️ Admin Bot {MUSIC_BOT_NAME}[{member.mention}] baru saja bergabung dengan Group ini."
                 )
             return
         except:
@@ -85,7 +94,20 @@ async def useradd(_, message: Message):
     await asyncio.gather(
         message.delete(),
         message.reply_text(
-            f"Terima kasih telah mengundang saya di {message.chat.title}.\n{MUSIC_BOT_NAME} masih hidup.\n\nUntuk bantuan atau bantuan apa pun, periksa grup dan saluran dukungan kami.",
+            f"""
+ ┏━━━━•᪣•°• -𖣔- •°•᪣•━━━┓
+     ┏━━┓┏━━┓┏━━┓┏━━┓ 
+     ┗━┓┃┃┏┓┃┗━┓┃┗━┓┃ 
+     ┏━┛┃┃┃┃┃┏━┛┃┏━┛┃
+     𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙺𝙰𝙼𝙸 𝚈𝙰 𝙶𝚄𝚈𝚂🙏
+     ┃┗━┓┃┗┛┃┃┗━┓┃┗━┓
+     ┗━━┛┗━━┛┗━━┛┗━━┛
+  ┗━━━━•᪣•°• -𖣔- •°•᪣•━━━┛
+👋 Terima kasih telah memasukkan saya di {message.chat.title}
+
+🤖 {MUSIC_BOT_NAME} Diaktifkan 🔥
+
+📌 Untuk bantuan atau bantuan apa pun, periksa Group dan Channel dukungan kami.""",
             reply_markup=InlineKeyboardMarkup(out[1]),
         ),
     )
@@ -108,7 +130,7 @@ async def settings(_, message: Message):
     await asyncio.gather(
         message.delete(),
         message.reply_text(
-            f"{text}\n\n**Group:** {message.chat.title}\n**Group ID:** {message.chat.id}\n**Volume Level:** {volume}%",
+            f"{text}\n\n**Group:** {message.chat.title}\n**Tingkat Suara:** {volume}%",
             reply_markup=InlineKeyboardMarkup(buttons),
         ),
     )
@@ -116,17 +138,30 @@ async def settings(_, message: Message):
 
 @app.on_callback_query(filters.regex("okaybyee"))
 async def okaybhai(_, CallbackQuery):
-    await CallbackQuery.answer("Going Back ...")
+    await CallbackQuery.answer("Akan Kembali ...")
     out = start_pannel()
     await CallbackQuery.edit_message_text(
-        text=f"Thanks for having me in {CallbackQuery.message.chat.title}.\n{MUSIC_BOT_NAME}is alive.\n\nFor any assistance or help, checkout our support group and channel.",
+        text=f"""
+ ┏━━━━•᪣•°• -𖣔- •°•᪣•━━━┓
+     ┏━━┓┏━━┓┏━━┓┏━━┓ 
+     ┗━┓┃┃┏┓┃┗━┓┃┗━┓┃ 
+     ┏━┛┃┃┃┃┃┏━┛┃┏━┛┃
+     𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙺𝙰𝙼𝙸 𝚈𝙰 𝙶𝚄𝚈𝚂🙏
+     ┃┗━┓┃┗┛┃┃┗━┓┃┗━┓
+     ┗━━┛┗━━┛┗━━┛┗━━┛
+  ┗━━━━•᪣•°• -𖣔- •°•᪣•━━━┛
+👋 Terima kasih telah memasukkan saya {CallbackQuery.message.chat.title}
+
+🤖 {MUSIC_BOT_NAME} Diaktifkan 🔥
+
+📌 Untuk bantuan atau bantuan apa pun, periksa Group dan Channel dukungan kami.""",
         reply_markup=InlineKeyboardMarkup(out[1]),
     )
 
 
 @app.on_callback_query(filters.regex("settingm"))
 async def settingm(_, CallbackQuery):
-    await CallbackQuery.answer("Bot Settings ...")
+    await CallbackQuery.answer("Pengaturan Bot ...")
     text, buttons = setting_markup()
     c_title = CallbackQuery.message.chat.title
     c_id = CallbackQuery.message.chat.id
@@ -141,7 +176,7 @@ async def settingm(_, CallbackQuery):
     else:
         volume = _check["volume"]
     await CallbackQuery.edit_message_text(
-        text=f"{text}\n\n**Group:** {c_title}\n**Group ID:** {c_id}\n**Volume Level:** {volume}%",
+        text=f"{text}\n\n**Group:** {c_title}\n**Tingkat Suara:** {volume}%",
         reply_markup=InlineKeyboardMarkup(buttons),
     )
 
@@ -154,15 +189,15 @@ async def EVE(_, CallbackQuery):
     chat_id = CallbackQuery.message.chat.id
     is_non_admin = await is_nonadmin_chat(chat_id)
     if not is_non_admin:
-        await CallbackQuery.answer("Changes Saved")
+        await CallbackQuery.answer("Perubahan Tersimpan")
         await add_nonadmin_chat(chat_id)
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\nAdmins Commands Mode to **Everyone**\n\nNow anyone present in this group can skip, pause, resume, stop music.\n\nChanges Done By @{checking}",
+            text=f"{text}\n\nMode Perintah Admin ke **Semuanya**\n\nSekarang, siapa pun yang ada di Group ini dapat melewati, menjeda, melanjutkan dan menghentikan musik.\n\nPerubahan dilakukan oleh @{checking}",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
         await CallbackQuery.answer(
-            "Commands Mode is Already Set To EVERYONE", show_alert=True
+            "Mode Perintah Sudah Disetel Untuk SEMUANYA", show_alert=True
         )
 
 
@@ -175,13 +210,13 @@ async def AMS(_, CallbackQuery):
     is_non_admin = await is_nonadmin_chat(chat_id)
     if not is_non_admin:
         await CallbackQuery.answer(
-            "Commands Mode is Already Set To ADMINS ONLY", show_alert=True
+            "Mode Perintah Sudah Disetel Ke ADMIN SAJA", show_alert=True
         )
     else:
-        await CallbackQuery.answer("Changes Saved")
+        await CallbackQuery.answer("Perubahan Tersimpan")
         await remove_nonadmin_chat(chat_id)
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\nSet Commands Mode to **Admins**\n\nNow only Admins present in this group can skip, pause, resume, stop musics.\n\nChanges Done By @{checking}",
+            text=f"{text}\n\nSetel Mode Perintah ke **Admin**\n\nSekarang hanya Admin yang ada di grup ini yang dapat melewati, menjeda, melanjutkan, menghentikan musik.\n\nPerubahan Dilakukan Oleh @{checking}",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
 
@@ -197,26 +232,26 @@ async def start_markup_check(_, CallbackQuery):
     c_id = CallbackQuery.message.chat.id
     chat_id = CallbackQuery.message.chat.id
     if command == "AQ":
-        await CallbackQuery.answer("Already in Best Quality", show_alert=True)
+        await CallbackQuery.answer("Sudah dalam Kualitas Terbaik", show_alert=True)
     if command == "AV":
-        await CallbackQuery.answer("Bot Settings ...")
+        await CallbackQuery.answer("Pengaturan Bot ...")
         text, buttons = volmarkup()
         _check = await get_start(c_id, "assistant")
         volume = _check["volume"]
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\n**Group:** {c_title}\n**Group ID:** {c_id}\n**Volume Level:** {volume}%\n**Audio Quality:** Default Best",
+            text=f"{text}\n\n**Group:** {c_title}\n**Tingkat Suara:** {volume}%\n**Kualitas Suara:** Bawaan Terbaik",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if command == "AU":
-        await CallbackQuery.answer("Bot Settings ...")
+        await CallbackQuery.answer("Pengaturan Bot...")
         text, buttons = usermarkup()
         is_non_admin = await is_nonadmin_chat(chat_id)
         if not is_non_admin:
-            current = "Admins Only"
+            current = "Hanya Admin"
         else:
-            current = "Everyone"
+            current = "Semuanya"
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\n**Group:** {c_title}\n\nCurrently Who Can Use {MUSIC_BOT_NAME}:- **{current}**\n\n**⁉️ What is This?**\n\n**👥 Everyone :-**Anyone can use {MUSIC_BOT_NAME}'s commands(skip, pause, resume etc) present in this group.\n\n**🙍 Admin Only :-**  Only the admins and authorized users can use all commands of {MUSIC_BOT_NAME}.",
+            text=f"{text}\n\n**Group:** {c_title}\n\nSaat ini siapa yang dapat menggunakan {MUSIC_BOT_NAME}:- **{current}**\n\n**⁉️ Apa ini?**\n\n**🫂 Semuanya :-**Semuanya dapat menggunakan {MUSIC_BOT_NAME} Perintah (melewati, menjeda, melanjutkan dsb) hadir di Group ini.\n\n**👷 Hanya Admin :-**  Hanya Admin dan Pengguna Resmi yang dapat menggunakan semua perintah dari {MUSIC_BOT_NAME}.",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if command == "Dashboard":
@@ -225,16 +260,16 @@ async def start_markup_check(_, CallbackQuery):
         _check = await get_start(c_id, "assistant")
         volume = _check["volume"]
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\n**Group:** {c_title}\n**Group ID:** {c_id}\n**Volume Level:** {volume}%\n\nCheck {MUSIC_BOT_NAME}'s System Stats In the DashBoard Here! More Functions adding very soon! Keep on Checking Support Channel.",
+            text=f"{text}\n\n**Group:** {c_title}\n**Tingkat Suara:** {volume}%\n\nMemeriksa {MUSIC_BOT_NAME} Statistik Sistem di dashboard saat ini! Lebih banyak fungsi ditambahkan segera! Selalu periksa group dan channel kami.",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if command == "Custommarkup":
-        await CallbackQuery.answer("Bot Settings ...")
+        await CallbackQuery.answer("Pengaturan Bot ...")
         text, buttons = custommarkup()
         _check = await get_start(c_id, "assistant")
         volume = _check["volume"]
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\n**Group:** {c_title}\n**Group ID:** {c_id}\n**Volume Level:** {volume}%\n**Audio Quality:** Default Best",
+            text=f"{text}\n\n**Group:** {c_title}\n**Tingkat Suara:** {volume}%\n**Kualitas Suara:** Bawaan Terbaik",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if command == "LV":
@@ -244,13 +279,13 @@ async def start_markup_check(_, CallbackQuery):
         volume = 25
         try:
             await Yukki.pytgcalls.change_volume_call(c_id, volume)
-            await CallbackQuery.answer("Setting Audio Changes ...")
+            await CallbackQuery.answer("Mengatur Perubahan Suara ...")
         except:
-            return await CallbackQuery.answer("No active Group Call...")
+            return await CallbackQuery.answer("Tidak Ada Obrolan Suara Aktif...")
         await save_start(c_id, "assistant", assis)
         text, buttons = volmarkup()
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\n**Group:** {c_title}\n**Group ID:** {c_id}\n**Volume Level:** {volume}%\n**Audio Quality:** Default Best",
+            text=f"{text}\n\n**Group:** {c_title}\n**Tingkat Suara:** {volume}%\n**Kualitas Suara:** Bawaan Terbaik",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if command == "MV":
@@ -260,13 +295,13 @@ async def start_markup_check(_, CallbackQuery):
         volume = 50
         try:
             await Yukki.pytgcalls.change_volume_call(c_id, volume)
-            await CallbackQuery.answer("Setting Audio Changes ...")
+            await CallbackQuery.answer("Mengatur Perubahan Suara ...")
         except:
-            return await CallbackQuery.answer("No active Group Call...")
+            return await CallbackQuery.answer("Tidak Ada Obrolan Suara Aktif...")
         await save_start(c_id, "assistant", assis)
         text, buttons = volmarkup()
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\n**Group:** {c_title}\n**Group ID:** {c_id}\n**Volume Level:** {volume}%\n**Audio Quality:** Default Best",
+            text=f"{text}\n\n**Group:** {c_title}\n**Tingkat Suara:** {volume}%\n**Kualitas Suara:** Bawaan Terbaik",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if command == "HV":
@@ -276,13 +311,13 @@ async def start_markup_check(_, CallbackQuery):
         volume = 100
         try:
             await Yukki.pytgcalls.change_volume_call(c_id, volume)
-            await CallbackQuery.answer("Setting Audio Changes ...")
+            await CallbackQuery.answer("Mengatur Perubahan Suara ...")
         except:
-            return await CallbackQuery.answer("No active Group Call...")
+            return await CallbackQuery.answer("Tidak Ada Obrolan Suara Aktif...")
         await save_start(c_id, "assistant", assis)
         text, buttons = volmarkup()
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\n**Group:** {c_title}\n**Group ID:** {c_id}\n**Volume Level:** {volume}%\n**Audio Quality:** Default Best",
+            text=f"{text}\n\n**Group:** {c_title}\n**Tingkat Suara:** {volume}%\n**Kualitas Suara:** Bawaan Terbaik",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if command == "VAM":
@@ -292,13 +327,13 @@ async def start_markup_check(_, CallbackQuery):
         volume = 200
         try:
             await Yukki.pytgcalls.change_volume_call(c_id, volume)
-            await CallbackQuery.answer("Setting Audio Changes ...")
+            await CallbackQuery.answer("Mengatur Perubahan Suara ...")
         except:
-            return await CallbackQuery.answer("No active Group Call...")
+            return await CallbackQuery.answer("Tidak Ada Obrolan Suara Aktif...")
         await save_start(c_id, "assistant", assis)
         text, buttons = volmarkup()
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\n**Group:** {c_title}\n**Group ID:** {c_id}\n**Volume Level:** {volume}%\n**Audio Quality:** Default Best",
+            text=f"{text}\n\n**Group:** {c_title}\n**Tingkat Suara:** {volume}%\n**Kualitas Suara:** Bawaan Terbaik",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if command == "PTEN":
@@ -314,13 +349,13 @@ async def start_markup_check(_, CallbackQuery):
         }
         try:
             await Yukki.pytgcalls.change_volume_call(c_id, volume)
-            await CallbackQuery.answer("Setting Audio Changes ...")
+            await CallbackQuery.answer("Mengatur Perubahan Suara...")
         except:
-            return await CallbackQuery.answer("No active Group Call...")
+            return await CallbackQuery.answer("Tidak Ada Obrolan Suara Aktif...")
         await save_start(c_id, "assistant", assis)
         text, buttons = custommarkup()
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\n**Group:** {c_title}\n**Group ID:** {c_id}\n**Volume Level:** {volume}%\n**Audio Quality:** Default Best",
+            text=f"{text}\n\n**Group:** {c_title}\n**Tingkat Suara:** {volume}%\n**Kualitas Suara:** Bawaan Terbaik",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if command == "MTEN":
@@ -336,13 +371,13 @@ async def start_markup_check(_, CallbackQuery):
         }
         try:
             await Yukki.pytgcalls.change_volume_call(c_id, volume)
-            await CallbackQuery.answer("Setting Audio Changes ...")
+            await CallbackQuery.answer("Mengatur Perubahan Suara...")
         except:
-            return await CallbackQuery.answer("No active Group Call...")
+            return await CallbackQuery.answer("Tidak Ada Obrolan Suara Aktif...")
         await save_start(c_id, "assistant", assis)
         text, buttons = custommarkup()
         await CallbackQuery.edit_message_text(
-            text=f"{text}\n\n**Group:** {c_title}\n**Group ID:** {c_id}\n**Volume Level:** {volume}%\n**Audio Quality:** Default Best",
+            text=f"{text}\n\n**Group:** {c_title}\n**Tingkat Suara:** {volume}%\n**Kualitas Suara:** Bawaan Terbaik",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     if command == "PTF":
