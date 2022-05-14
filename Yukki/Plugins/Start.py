@@ -69,7 +69,7 @@ async def welcome(_, message: Message):
    ┃┗━┓┃┗┛┃┃┗━┓┃┗━┓
    ┗━━┛┗━━┛┗━━┛┗━━┛
 ┗━━━━•᪣•°• -𖣔- •°•᪣•━━━┛
-👋 Selamat Datang Di {MUSIC_BOT_NAME}\n\nPromosikan saya sebagai administrator di grup Anda jika tidak, saya tidak akan berfungsi dengan baik.\n\nNama Pengguna Asisten:- @{ASS_USERNAME}\nID Asisten:- {ASS_ID}.\n\n **OWNER** @gausahsokablunyet""",
+👋 Selamat Datang Di {MUSIC_BOT_NAME}\n\nPromosikan saya sebagai administrator di grup Anda jika tidak, saya tidak akan berfungsi dengan baik.\n\nNama Pengguna Asisten:- @{ASS_USERNAME}\nID Asisten:- {ASS_ID}.\n\n **FRIENDZONE TEAM**""",
                     reply_markup=InlineKeyboardMarkup(out[1]),
                 )
             if member.id in ASSIDS:
@@ -107,7 +107,7 @@ async def useradd(_, message: Message):
 
 🤖 {MUSIC_BOT_NAME} Diaktifkan 🔥
 
-📌 Untuk bantuan atau bantuan apa pun, periksa Group dan Channel dukungan kami.""",
+📌 Untuk bantuan atau bantuan apa pun, periksa Group dan Channel dukungan kami.\n\n **FRIENDZONE TEAM**""",
             reply_markup=InlineKeyboardMarkup(out[1]),
         ),
     )
@@ -154,7 +154,7 @@ async def okaybhai(_, CallbackQuery):
 
 🤖 {MUSIC_BOT_NAME} Diaktifkan 🔥
 
-📌 Untuk bantuan atau bantuan apa pun, periksa Group dan Channel dukungan kami.""",
+📌 Untuk bantuan atau bantuan apa pun, periksa Group dan Channel dukungan kami.\n\n **FRIENDZONE TEAM**""",
         reply_markup=InlineKeyboardMarkup(out[1]),
     )
 
