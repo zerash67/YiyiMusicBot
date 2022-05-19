@@ -34,7 +34,7 @@ async def whitelist_chat_func(_, message: Message):
     whitelisted = await whitelist_chat(chat_id)
     if whitelisted:
         return await message.reply_text(
-            "Obrolan telah berhasil masuk daftar putih"
+            "Obrolan telah berhasil masuk Daftar Putih"
         )
     await message.reply_text("Terjadi kesalahan, periksa log.")
 
