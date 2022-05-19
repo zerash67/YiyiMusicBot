@@ -27,7 +27,7 @@ async def gback_list_chose_stream(_, CallbackQuery):
     videoid, duration, user_id = callback_request.split("|")
     if CallbackQuery.from_user.id != int(user_id):
         return await CallbackQuery.answer(
-            "Ini bukan untuk kamu! Cari lagu milik kamu.", show_alert=True
+            "Ini bukan untuk kamu! Cari lagu milik kamu🙏.", show_alert=True
         )
     buttons = choose_markup(videoid, duration, user_id)
     await CallbackQuery.edit_message_reply_markup(
