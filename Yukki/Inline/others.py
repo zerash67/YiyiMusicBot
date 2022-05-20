@@ -12,7 +12,7 @@ def others_markup(videoid, user_id):
         [
             InlineKeyboardButton(
                 text="🔍 ᴍᴇɴᴄᴀʀɪ ʟɪʀɪᴋ",
-                callback_data=f"lyrics {videoid}|{user_id}",
+                callback_data=f"lirik {videoid}|{user_id}",
             )
         ],
         [
@@ -50,11 +50,11 @@ def download_markup(videoid, user_id):
         [
             InlineKeyboardButton(
                 text="⬇️ ᴅᴀᴘᴀᴛᴋᴀɴ ᴀᴜᴅɪᴏ",
-                callback_data=f"gets audio|{videoid}|{user_id}",
+                callback_data=f"Mendapatkan Audio|{videoid}|{user_id}",
             ),
             InlineKeyboardButton(
                 text="⬇️ ᴅᴀᴘᴀᴛᴋᴀɴ ᴠɪᴅᴇᴏ",
-                callback_data=f"gets video|{videoid}|{user_id}",
+                callback_data=f"Mendapatkan Video|{videoid}|{user_id}",
             ),
         ],
         [
