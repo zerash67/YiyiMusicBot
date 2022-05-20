@@ -37,7 +37,7 @@ async def telegram_download(message, mystic):
 **Ukuran Lengkap:** {completed_size}
 **Persentase:** {percentage}%
 
-**Kecepatan:** {speed}/s
+**Kecepatan:** {speed}/detik
 **ETA:** {eta}"""
             try:
                 await mystic.edit(text)
