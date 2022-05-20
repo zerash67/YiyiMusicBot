@@ -91,7 +91,7 @@ async def activevc(_, message: Message):
 
         msg = "**Daftar Antrian**\n\n"
         msg += "**Sedang Bermain:**"
-        msg += "\n▷" + current_playing[:30]
+        msg += "\n▶️" + current_playing[:30]
         msg += f"\n   ╚Oleh:- {user_name}"
         msg += f"\n   ╚Durasi:- Tersisa `{dur_left}` Dari `{duration_min}` Menit."
         fetched.pop(0)
@@ -102,7 +102,7 @@ async def activevc(_, message: Message):
                 name = song[0][:30]
                 usr = song[1]
                 dur = song[2]
-                msg += f"\nII{name}"
+                msg += f"\n⏩{name}"
                 msg += f"\n   ╠Durasi: {dur}"
                 msg += f"\n   ╚Atas Permintaan: {usr}\n"
         if len(msg) > 4096:
