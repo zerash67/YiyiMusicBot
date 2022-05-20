@@ -137,7 +137,7 @@ async def initiate_bot():
         try:
             await ASS_CLI_2.send_message(
                 LOG_GROUP_ID,
-                "<b>Congrats!! Assistant Client 2 has started successfully!</b>",
+                "<b>Selamat!! Akun Asisten 2 Berhasil Dimulai!</b>",
             )
         except Exception as e:
             print(
