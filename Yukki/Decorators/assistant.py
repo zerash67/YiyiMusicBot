@@ -71,7 +71,7 @@ def AssistantAdd(mystic):
             )
             if b.status == "kicked":
                 return await message.reply_text(
-                    f"Asisten Akun[{ASS_ID}] Diblokir.\nLepaskan Blokir untuk menggunakan Bot\n\nUsername: @{ASS_USERNAME}",
+                    f"Asisten Akun[{ASS_ID}] Ditendang.\nMasukan kembali Asisten dengan ketik /play untuk menggunakan Bot\n\nUsername: @{ASS_USERNAME}",
                     reply_markup=key,
                 )
             if b.status == "banned":
