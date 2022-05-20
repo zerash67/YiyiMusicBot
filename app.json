@@ -44,7 +44,7 @@
       "required": true
     },
     "MUSIC_BOT_NAME": {
-      "description": "Nama Untuk Bot Music Mu.",
+      "description": "Nama Untuk Bot Music Mu.Silahkan ambil di https://t.me/Botfather",
       "value": "",
       "required": true
     },
@@ -64,8 +64,8 @@
       "required": true
     },
     "START_IMG_URL": {
-      "description": "Link Telegraph untuk Foto yang akan tampil saat di /start bot mu, Dapatkan di sini @ImageGraphBot",
-      "value": "",
+      "description": "Link Telegraph untuk Foto yang akan tampil saat di /start bot mu, Dapatkan di sini @TGraphRoBot. Atau tidak tahu silahkan /skip saja",
+      "value": "https://telegra.ph/file/3e39518ae9cddde6b0557.png",
       "required": false
     },
     "STRING_SESSION1": {
