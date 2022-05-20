@@ -180,10 +180,10 @@ async def activevi_(_, message: Message):
             text += f"<b>{j + 1}. {title}</b> [`{x}`]\n"
         j += 1
     if not text:
-        await message.reply_text("Obrolan Suara Tidak Aktif")
+        await message.reply_text("Obrolan Video Tidak Aktif")
     else:
         await message.reply_text(
-            f"**Obrolan Suara Aktif:-**\n\n{text}",
+            f"**Obrolan Video Aktif:-**\n\n{text}",
             disable_web_page_preview=True,
         )
 
