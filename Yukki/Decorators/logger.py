@@ -12,7 +12,7 @@ def logging(mystic):
                 chatusername = "Private Group"
             try:
                 query = message.text.split(None, 1)[1]
-                what = "Query Given"
+                what = "Permintaan Diberikan"
             except:
                 try:
                     if not message.reply_to_message:
@@ -24,12 +24,12 @@ def logging(mystic):
             logger_text = f"""
 __**Baru {what}**__
 
-**Chat:** {message.chat.title}
-**User:** {message.from_user.mention}
+**Group:** {message.chat.title}
+**Pengguna:** {message.from_user.mention}
 **Username:** @{message.from_user.username}
-**User ID:** `{message.from_user.id}`
-**Chat Link:** {chatusername}
-**Antrian:** {message.text}"""
+**ID Pengguna:** `{message.from_user.id}`
+**Link Group:** {chatusername}
+**Permintaan:** {message.text}"""
             if LOG_CLIENT != "None":
                 await LOG_CLIENT.send_message(
                     LOG_GROUP_ID,
