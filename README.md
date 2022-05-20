@@ -17,7 +17,7 @@
     Bot musik telegram untuk memutar musik+video dengan bahasa pemrograman Python menggunakan Pyrogram dan Py-Tgcalls
 </h4>
 <p align="center">
-    <a href="https://t.me/PhmusikBot"> Ready-To-Use Bot </a> •
+    <a href="https://t.me/FzmusicteamBot"> Ready-To-Use Bot </a> •
     <a href="https://t.me/chFZsokin"> Support Channel </a> •
     <a href="https://t.me/friendzonesokin"> Support Chat </a> 
 </p>
