@@ -149,6 +149,6 @@ async def authusers(_, message: Message):
                 j += 1
             except Exception:
                 continue
-            msg += f"{j}⌬ {user}[`{user_id}`]\n"
+            msg += f"{j}👤 {user}[`{user_id}`]\n"
             msg += f"    ┗ Ditambahkan oleh:- {admin_name}[`{admin_id}`]\n\n"
         await m.edit_text(msg)
